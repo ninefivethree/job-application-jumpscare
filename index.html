@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>j*b application jumpscare</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        html {
+            background-color: #f4f4f5;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+
+            font-family: "Inter", sans-serif;
+            padding: 0 2em;
+
+            * {
+                box-sizing: border-box;
+            }
+        }
+
+        a {
+            text-decoration-color: transparent;
+            text-decoration-thickness: 0.125rem;
+            color: #000;
+            transition: text-decoration-color 0.1s;
+        }
+
+        a:hover {
+            text-decoration-color: inherit;
+            transition: text-decoration-color 0.1s;
+        }
+
+        a,
+        p {
+            letter-spacing: -0.03rem;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        body {
+            width: 100%;
+            max-width: 60em;
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin-top: 0.5em;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.25em 0;
+
+            * {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3em;
+        }
+
+        .logotype {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.75em;
+        }
+
+        .cta-button {
+            text-decoration: none;
+            background-color: #000;
+            color: #fff;
+            font-weight: 400;
+
+            padding: 0.6rem 1.25rem;
+            border-radius: 0.75rem;
+        }
+
+        .bg-accent {
+            background-color: #0077ff;
+        }
+
+        .hero-banner {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            border-radius: 1em;
+
+            padding: 1em 2em;
+            gap: 1em;
+
+            background: url("/shapes.jpg");
+            background-size: cover;
+        }
+
+        .hero-heading {
+            text-align: center;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1 class="logotype">
+            mattee
+        </h1>
+        <section class="nav-links">
+            <a href="/">Vacancies</a>
+            <a href="/">For employers</a>
+        </section>
+        <a href="/" class="cta-button bg-accent">Publish</a>
+    </nav>
+    <main>
+        <div class="hero-banner">
+            <span></span>
+            <h1 class="hero-heading">
+                Exclusive offers available
+                <br>
+                through our Telegram channel
+            </h1>
+            <a href="/" class="cta-button">
+                Subscribe now
+            </a>
+        </div>
+    </main>
+</body>
+
+</html>
