@@ -31,19 +31,18 @@
 
         a {
             text-decoration-color: transparent;
-            text-decoration-thickness: 0.125rrem;
+            text-decoration-thickness: 0.125rem;
             color: #000;
             transition: text-decoration-color 0.1s;
         }
 
         a:hover {
             text-decoration-color: inherit;
-            transition: text-decoration-color 0.1s;
         }
 
         a,
         p {
-            letter-spacing: -0.03rrem;
+            letter-spacing: -0.015rem;
             font-size: 0.9rem;
             font-weight: 500;
         }
@@ -88,6 +87,10 @@
             font-size: 1.75rem;
         }
 
+        .logo-large {
+            font-size: 2.5rem;
+        }
+
         .cta-button {
             text-decoration: none;
             background-color: #000;
@@ -109,22 +112,24 @@
             background-color: #fafafa;
         }
 
-        #hero-banner {
+        .banner {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-direction: column;
 
-            padding: 1rem 2rem;
-            gap: 1rem;
+            padding: 1.5rem 1.5rem 1rem;
+            gap: 1.5rem;
 
             background: url("https://ninefivethree.github.io/fake-landing/shapes.jpg");
             background-size: cover;
             background-position: center;
+
+            * { margin: 0 }
         }
 
-        #hero-heading {
+        .banner-heading {
             text-align: center;
             font-weight: 600;
         }
@@ -137,7 +142,7 @@
             gap: 1rem;
         }
 
-        #filters-card {
+        .filters-card {
             display: flex;
             align-items: start;
             justify-content: start;
@@ -174,7 +179,7 @@
             width: 100%;
         }
 
-        .button-list {
+        .chip-list {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
@@ -188,6 +193,17 @@
                 padding: 0.25rem 0.4rem;
                 border-radius: 0.25rem;
             }
+
+            span {
+                width: fit-content;
+                border: none;
+                background-color: #f4f4f5;
+                color: black;
+                font-weight: 400;
+                padding: 0.25rem 0.4rem;
+                border-radius: 0.25rem;
+                font-size: 0.75rem;
+            }
         }
 
         .offer-list {
@@ -198,11 +214,89 @@
         }
 
         .offer-card {
-            min-width: 12rem;
-            padding: 1.5rem;
+            position: relative;
+            width: 12rem;
+            height: 12rem;
+            padding: 0.75rem;
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
-        #location-container {
+        .offer-details {
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            * {
+                margin: 0;
+            }
+        }
+
+        .offer-company {
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+
+        .offer-position {
+            font-size: 1.2rem;
+            line-height: 1.3rem;
+            font-weight: 400;
+        }
+
+        .offer-location {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 0.2rem;
+            color: #818181;
+
+            p {
+                font-size: 0.7rem;
+                font-weight: 400;
+            }
+        }
+
+        .offer-company-row {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 0.4rem;
+        }
+
+        .icon {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .new-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+
+            position: absolute;
+            top: -0.5rem;
+            right: -1rem;
+            background-color: #0077ff;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 400;
+            padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+            border-radius: 1rem;
+            transform: rotate(15.6deg);
+
+            img {
+                width: 1.1rem;
+                height: 1.1rem;
+            }
+        }
+
+        .location-list {
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -231,7 +325,7 @@
             align-items: center;
         }
 
-        #salary-container {
+        .salary-range {
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -239,13 +333,34 @@
             gap: 0.5em;
         }
 
-        .spacer {
+        .divider {
             padding: 0.75em 0.5px;
             background-color: #e4e4e7;
         }
 
         footer {
             margin-top: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-links-container {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 50%;
         }
     </style>
 </head>
@@ -259,12 +374,12 @@
             <a href="/">Vacancies</a>
             <a href="/">For employers</a>
         </section>
-        <a href="/" class="cta-button bg-accent">Publish</a>
+        <a href="/" class="cta-button bg-accent">Start hiring</a>
     </nav>
     <main>
-        <div class="card" id="hero-banner">
+        <div class="card banner">
             <span></span>
-            <h1 id="hero-heading">
+            <h1 class="banner-heading">
                 Exclusive offers available
                 <br>
                 through our Telegram channel
@@ -274,119 +389,307 @@
             </a>
         </div>
         <div class="offers-container">
-            <form class="card" id="filters-card">
-                <input type="text" placeholder="Search" id="search-input">
+            <form class="card filters-card">
+                <input type="text" placeholder="Search">
                 <fieldset>
-                    <legend>
-                        Work hours
-                    </legend>
-                    <div class="button-list">
-                        <button>
-                            Part-time
-                        </button>
-                        <button>
-                            Full-time
-                        </button>
-                        <button>
-                            Internship
-                        </button>
+                    <legend>Work hours</legend>
+                    <div class="chip-list">
+                        <button>Part-time</button>
+                        <button>Full-time</button>
+                        <button>Internship</button>
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>
-                        Model
-                    </legend>
-                    <div class="button-list">
-                        <button>
-                            Onsite
-                        </button>
-                        <button>
-                            Remote
-                        </button>
-                        <button>
-                            Hybrid
-                        </button>
+                    <legend>Model</legend>
+                    <div class="chip-list">
+                        <button>Onsite</button>
+                        <button>Remote</button>
+                        <button>Hybrid</button>
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>
-                        Grade
-                    </legend>
-                    <div class="button-list">
-                        <button>
-                            Junior
-                        </button>
-                        <button>
-                            Middle
-                        </button>
-                        <button>
-                            Senior
-                        </button>
-                        <button>
-                            Lead
-                        </button>
-                        <button>
-                            Head
-                        </button>
+                    <legend>Grade</legend>
+                    <div class="chip-list">
+                        <button>Junior</button>
+                        <button>Middle</button>
+                        <button>Senior</button>
+                        <button>Lead</button>
+                        <button>Head</button>
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>
-                        Location
-                    </legend>
-                    <div id="location-container">
+                    <legend>Location</legend>
+                    <div class="location-list">
                         <div class="location-item">
-                            <label for="stockholm">
-                                Stockholm
-                            </label>
+                            <label for="stockholm">Stockholm</label>
                             <input type="checkbox" id="stockholm" name="stockholm" />
                         </div>
                         <div class="location-item">
-                            <label for="gothenburg">
-                                Gothenburg
-                            </label>
+                            <label for="gothenburg">Gothenburg</label>
                             <input type="checkbox" id="gothenburg" name="gothenburg" />
                         </div>
                         <div class="location-item">
-                            <label for="malmo">
-                                Malmö
-                            </label>
+                            <label for="malmo">Malmö</label>
                             <input type="checkbox" id="malmo" name="malmo" />
                         </div>
                         <div class="location-item">
-                            <label for="uppsala">
-                                Uppsala
-                            </label>
+                            <label for="uppsala">Uppsala</label>
                             <input type="checkbox" id="uppsala" name="uppsala" />
                         </div>
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>
-                        Salary
-                    </legend>
-                    <div id="salary-container">
-                        <input type="text" placeholder="Starting at" id="salary-min" />
-                        <span class="spacer"></span>
-                        <input type="text" placeholder="Up to" id="salary-max" />
+                    <legend>Salary</legend>
+                    <div class="salary-range">
+                        <input type="text" placeholder="Starting at" />
+                        <span class="divider"></span>
+                        <input type="text" placeholder="Up to" />
                     </div>
                 </fieldset>
             </form>
             <div class="offer-list">
                 <div class="card offer-card">
+                    <span class="new-badge">
+                        <img src="1f525.svg" alt="fire icon">
+                        new
+                    </span>
+                    <div class="offer-details">
+                        <div class="offer-company-row">
+                            <img src="cc-codex.svg" alt="company logo" class="icon">
+                            <p class="offer-company">Corp McBusiness</p>
+                        </div>
+                        <h1 class="offer-position">Concept artist</h1>
+                        <div class="offer-location">
+                            <img src="map-pin.svg" alt="location icon" class="icon">
+                            <p>Stockholm, onsite</p>
+                        </div>
+                    </div>
+                    <div class="chip-list">
+                        <span>30 000 kr</span>
+                        <span>Full-time</span>
+                        <span>Junior</span>
+                    </div>
+                    </div>
+                    <div class="card offer-card">
+                        <span class="new-badge">
+                            <img src="1f525.svg" alt="fire icon">
+                            new
+                        </span>
+                        <div class="offer-details">
+                            <div class="offer-company-row">
+                                <img src="cc-codex.svg" alt="company logo" class="icon">
+                                <p class="offer-company">ACME</p>
+                            </div>
+                            <h1 class="offer-position">UI/UX designer</h1>
+                            <div class="offer-location">
+                                <img src="map-pin.svg" alt="location icon" class="icon">
+                                <p>Stockholm, onsite</p>
+                            </div>
+                        </div>
+                        <div class="chip-list">
+                            <span>30 000 kr</span>
+                            <span>Full-time</span>
+                            <span>Junior</span>
+                        </div>
+                    </div>
+                    <div class="card offer-card">
+                        <div class="offer-details">
+                            <div class="offer-company-row">
+                                <img src="cc-codex.svg" alt="company logo" class="icon">
+                                <p class="offer-company">CHOAM</p>
+                            </div>
+                            <h1 class="offer-position">Graphic designer</h1>
+                            <div class="offer-location">
+                                <img src="map-pin.svg" alt="location icon" class="icon">
+                                <p>Stockholm, onsite</p>
+                            </div>
+                        </div>
+                        <div class="chip-list">
+                            <span>30 000 kr</span>
+                            <span>Full-time</span>
+                            <span>Junior</span>
+                        </div>
+                    </div>
+                    <div class="card offer-card">
+                        <div class="offer-details">
+                            <div class="offer-company-row">
+                                <img src="cc-codex.svg" alt="company logo" class="icon">
+                                <p class="offer-company">Corp McBusiness</p>
+                            </div>
+                            <h1 class="offer-position">Industrial designer</h1>
+                            <div class="offer-location">
+                                <img src="map-pin.svg" alt="location icon" class="icon">
+                                <p>Stockholm, onsite</p>
+                            </div>
+                        </div>
+                        <div class="chip-list">
+                            <span>30 000 kr</span>
+                            <span>Full-time</span>
+                            <span>Junior</span>
+                        </div>
+                    </div>
+                    <div class="card offer-card">
+                        <div class="offer-details">
+                            <div class="offer-company-row">
+                                <img src="cc-codex.svg" alt="company logo" class="icon">
+                                <p class="offer-company">ACME</p>
+                            </div>
+                            <h1 class="offer-position">Product designer</h1>
+                            <div class="offer-location">
+                                <img src="map-pin.svg" alt="location icon" class="icon">
+                                <p>Stockholm, onsite</p>
+                            </div>
+                        </div>
+                        <div class="chip-list">
+                            <span>30 000 kr</span>
+                            <span>Full-time</span>
+                            <span>Junior</span>
+                        </div>
+                    </div>
+                    <div class="card offer-card">
+                        <div class="offer-details">
+                            <div class="offer-company-row">
+                                <img src="cc-codex.svg" alt="company logo" class="icon">
+                                <p class="offer-company">CHOAM</p>
+                            </div>
+                            <h1 class="offer-position">Concept artist</h1>
+                            <div class="offer-location">
+                                <img src="map-pin.svg" alt="location icon" class="icon">
+                                <p>Stockholm, onsite</p>
+                            </div>
+                        </div>
+                        <div class="chip-list">
+                            <span>30 000 kr</span>
+                            <span>Full-time</span>
+                            <span>Junior</span>
+                        </div>
+                    </div>
+                    <div class="card offer-card">
+                        <div class="offer-details">
+                            <div class="offer-company-row">
+                                <img src="cc-codex.svg" alt="company logo" class="icon">
+                                <p class="offer-company">Corp McBusiness</p>
+                            </div>
+                            <h1 class="offer-position">Concept artist</h1>
+                            <div class="offer-location">
+                                <img src="map-pin.svg" alt="location icon" class="icon">
+                                <p>Stockholm, onsite</p>
+                            </div>
+                        </div>
+                        <div class="chip-list">
+                            <span>30 000 kr</span>
+                            <span>Full-time</span>
+                            <span>Junior</span>
+                        </div>
+                    </div>
+                    <div class="card offer-card">
+                        <div class="offer-details">
+                            <div class="offer-company-row">
+                                <img src="cc-codex.svg" alt="company logo" class="icon">
+                                <p class="offer-company">Corp McBusiness</p>
+                            </div>
+                            <h1 class="offer-position">Concept artist</h1>
+                            <div class="offer-location">
+                                <img src="map-pin.svg" alt="location icon" class="icon">
+                                <p>Stockholm, onsite</p>
+                            </div>
+                        </div>
+                        <div class="chip-list">
+                            <span>30 000 kr</span>
+                            <span>Full-time</span>
+                            <span>Junior</span>
+                        </div>
+                    </div>
+                    <div class="card offer-card">
+                        <div class="offer-details">
+                            <div class="offer-company-row">
+                                <img src="cc-codex.svg" alt="company logo" class="icon">
+                                <p class="offer-company">Corp McBusiness</p>
+                            </div>
+                            <h1 class="offer-position">Concept artist</h1>
+                            <div class="offer-location">
+                                <img src="map-pin.svg" alt="location icon" class="icon">
+                                <p>Stockholm, onsite</p>
+                            </div>
+                        </div>
+                        <div class="chip-list">
+                            <span>30 000 kr</span>
+                            <span>Full-time</span>
+                            <span>Junior</span>
+                        </div>
                 </div>
                 <div class="card offer-card">
+                    <div class="offer-details">
+                        <div class="offer-company-row">
+                            <img src="cc-codex.svg" alt="company logo" class="icon">
+                            <p class="offer-company">Corp McBusiness</p>
+                        </div>
+                        <h1 class="offer-position">Concept artist</h1>
+                        <div class="offer-location">
+                            <img src="map-pin.svg" alt="location icon" class="icon">
+                            <p>Stockholm, onsite</p>
+                        </div>
+                    </div>
+                    <div class="chip-list">
+                        <span>30 000 kr</span>
+                        <span>Full-time</span>
+                        <span>Junior</span>
+                    </div>
                 </div>
                 <div class="card offer-card">
+                    <div class="offer-details">
+                        <div class="offer-company-row">
+                            <img src="cc-codex.svg" alt="company logo" class="icon">
+                            <p class="offer-company">Corp McBusiness</p>
+                        </div>
+                        <h1 class="offer-position">Concept artist</h1>
+                        <div class="offer-location">
+                            <img src="map-pin.svg" alt="location icon" class="icon">
+                            <p>Stockholm, onsite</p>
+                        </div>
+                    </div>
+                    <div class="chip-list">
+                        <span>30 000 kr</span>
+                        <span>Full-time</span>
+                        <span>Junior</span>
+                    </div>
                 </div>
                 <div class="card offer-card">
+                    <div class="offer-details">
+                        <div class="offer-company-row">
+                            <img src="cc-codex.svg" alt="company logo" class="icon">
+                            <p class="offer-company">Corp McBusiness</p>
+                        </div>
+                        <h1 class="offer-position">Concept artist</h1>
+                        <div class="offer-location">
+                            <img src="map-pin.svg" alt="location icon" class="icon">
+                            <p>Stockholm, onsite</p>
+                        </div>
+                    </div>
+                    <div class="chip-list">
+                        <span>30 000 kr</span>
+                        <span>Full-time</span>
+                        <span>Junior</span>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer>
-        <div class="card" id="hero-banner">
-        </div>
+    <footer class="card banner">
+        <div class="footer-links-container">
+            <div class="footer-links">
+                <a href="/" class="cta-button bg-accent">Start hiring</a>
+            </div>
+            <div class="footer-links">
+                <a href="/">Vacancies</a>
+                <a href="/">For employers</a>
+                <a href="/">Telegram</a>
+                <a href="/">Support</a>
+            </div>
+            </div>
+            <h1 class="logotype logo-large">
+                mattee
+            </h1>
     </footer>
 </body>
 
